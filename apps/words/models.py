@@ -5,16 +5,20 @@ from django.utils.translation import ugettext_lazy as _
 class Word(models.Model):
 
     name = models.CharField(
+        max_length=20,
         verbose_name='Name',
     )
     translation = models.CharField(
+        max_length=20,
         verbose_name='Translation',
     )
     transcription = models.CharField(
+        max_length=30,
         verbose_name='Transcription',
     )
     example = models.CharField(
         # char or text todo
+        max_length=255,
         verbose_name='Phrase example'
     )
     sound = models.URLField(
@@ -24,8 +28,9 @@ class Word(models.Model):
         verbose_name='Picture',
     )
     theme = models.ForeignKey(
-    #     todo
-    #    todo or many to many
+        'themes.Theme',
+        on_delete=models.CASCADE,
+        related_name='theme',
     )
 
     def __str__(self):

@@ -11,12 +11,13 @@ class Theme(models.Model):
     category = models.ForeignKey(
         # todo
         'categories.Category',
-        on_delete=models.CASCADE,  # todo chose the best
+        on_delete=models.CASCADE,
         related_name='category',
     )
     level = models.ForeignKey(
         'levels.Level',
-
+        on_delete=models.SET_NULL,
+        null=True,
         related_name='level',
     )
     photo = models.URLField(
