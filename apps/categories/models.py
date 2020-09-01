@@ -10,6 +10,7 @@ class Category(models.Model):
     )
     icon = models.URLField(
         # todo check what is it in admin
+        # todo default none or empty
         verbose_name=_('Icon'),
     )
 
