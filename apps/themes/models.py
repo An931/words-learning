@@ -5,8 +5,9 @@ from django.utils.translation import ugettext_lazy as _
 class Theme(models.Model):
 
     name = models.CharField(
+        _('Theme'),
+        # todo change verb names to it
         max_length=20,
-        verbose_name=_('Theme'),
     )
     category = models.ForeignKey(
         # todo
