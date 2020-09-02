@@ -9,7 +9,7 @@ from rest_framework import generics
 #     queryset = Word.objects.all()
 #     serializer_class = WordSerializer
 
-class WordList(generics.ListAPIView):
+class WordViewSet(viewsets.ModelViewSet):
     # queryset = Word.objects.all()
     serializer_class = WordSerializer
 
