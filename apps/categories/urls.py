@@ -2,5 +2,5 @@ from . import views
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register(r'categories', views.CategoryViewSet)
+router.register(r'', views.CategoryViewSet)
 

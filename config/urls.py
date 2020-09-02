@@ -22,10 +22,10 @@ from apps.words.urls import router as words_router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(levels_router.urls)),
-    path('api/', include(categories_router.urls)),
-    path('api/', include(themes_router.urls)),
-    path('api/', include(words_router.urls)),
+    path('api/levels/', include(levels_router.urls)),
+    path('api/categories/', include(categories_router.urls)),
+    path('api/themes/', include(themes_router.urls)),
+    path('api/words/', include(words_router.urls)),
 
     # # path('api/categories', include('apps.categories.urls')),
     # path('api/categories', include(categories_router.urls)),
