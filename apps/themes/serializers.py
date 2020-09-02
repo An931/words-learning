@@ -12,7 +12,7 @@ class ThemeSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'category',
-            'level'
+            'level',
             'name',
             'photo',
             # 'words', todo

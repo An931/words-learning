@@ -10,7 +10,7 @@ from rest_framework import generics
 #     serializer_class = WordSerializer
 
 class WordViewSet(viewsets.ModelViewSet):
-    # queryset = Word.objects.all()
+    queryset = Word.objects.all()
     serializer_class = WordSerializer
 
     def get_queryset(self):

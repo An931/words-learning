@@ -2,6 +2,5 @@ from . import views
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register('', views.CategoryViewSet, basename='categories-list')
+router.register(r'categories', views.CategoryViewSet)
 
-# urlpatterns = router.urls  # todo or not
