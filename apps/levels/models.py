@@ -3,14 +3,15 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Level(models.Model):
-
     name = models.CharField(
+        _('Name'),
         max_length=20,
-        verbose_name=_('Name'),
+        unique=True,
     )
     code = models.CharField(
+        _('Code'),
         max_length=2,
-        verbose_name=_('Code'),
+        unique=True,
     )
 
     def __str__(self):

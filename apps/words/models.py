@@ -5,27 +5,35 @@ from django.utils.translation import ugettext_lazy as _
 class Word(models.Model):
 
     name = models.CharField(
+        _('Name'),
         max_length=20,
-        verbose_name='Name',
+    )
+    plural = models.CharField(
+        _('Plural'),
+        max_length=20,
+        blank=True,
     )
     translation = models.CharField(
+        _('Translation'),
         max_length=20,
-        verbose_name='Translation',
     )
     transcription = models.CharField(
+        _('Transcription'),
         max_length=30,
-        verbose_name='Transcription',
+        blank=True,
     )
     example = models.CharField(
-        # char or text todo
+        _('Phrase example'),
         max_length=255,
-        verbose_name='Phrase example'
+        blank=True,
     )
     sound = models.URLField(
-        verbose_name='Sound',
+        _('Sound'),
+        blank=True,
     )
     picture = models.URLField(
-        verbose_name='Picture',
+        _('Picture'),
+        blank=True,
     )
     theme = models.ForeignKey(
         'themes.Theme',

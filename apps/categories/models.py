@@ -3,15 +3,21 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Category(models.Model):
+    """Category model"""
 
     name = models.CharField(
-        max_length=20,
-        verbose_name=_('Name'),
+        _('Name'),
+        max_length=50,
+        unique=True,
+    )
+    translation = models.CharField(
+        _('Translation'),
+        max_length=50,
+        blank=True,
     )
     icon = models.URLField(
-        # todo check what is it in admin
-        # todo default none or empty
-        verbose_name=_('Icon'),
+        _('Icon'),
+        blank=True,
     )
 
     def __str__(self):

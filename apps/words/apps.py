@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class WordsConfig(AppConfig):
-    name = 'apps.words' #todo apps to all
+    name = 'apps.words'
     verbose_name = 'Words'

@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Level
+from .serializers import LevelSerializer
 
-# Create your views here.
+
+class LevelViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Level.objects.all()
+    serializer_class = LevelSerializer

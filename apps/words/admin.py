@@ -1,3 +1,38 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Word
+
+
+@admin.register(Word)
+class WordAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'id',
+        'name',
+        'translation',
+        'theme',
+    )
+    list_display_links = (
+        'id',
+        'name',
+        'translation',
+    )
+    # add fieldsets
+    list_filter = (
+        'theme',
+        'theme__level'
+    )
+    autocomplete_fields = (
+        'theme',
+    )
+    search_fields = (
+        'name',
+        'translation',
+        'example',
+    )
+    ordering = (
+        'theme__level',
+        'theme',
+        'name'
+    #     todo check
+    )

@@ -5,12 +5,15 @@ from django.utils.translation import ugettext_lazy as _
 class Theme(models.Model):
 
     name = models.CharField(
-        _('Theme'),
-        # todo change verb names to it
-        max_length=20,
+        _('Name'),
+        max_length=50,
+    )
+    translation = models.CharField(
+        _('Translation'),
+        max_length=50,
+        blank=True,
     )
     category = models.ForeignKey(
-        # todo
         'categories.Category',
         on_delete=models.CASCADE,
         related_name='category',
@@ -22,7 +25,8 @@ class Theme(models.Model):
         related_name='level',
     )
     photo = models.URLField(
-        verbose_name='Photo'
+        _('Photo'),
+        blank=True,
     )
 
     def __str__(self):
