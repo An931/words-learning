@@ -5,7 +5,6 @@ from .models import Word
 
 @admin.register(Word)
 class WordAdmin(admin.ModelAdmin):
-
     list_display = (
         'id',
         'name',
@@ -34,5 +33,7 @@ class WordAdmin(admin.ModelAdmin):
         'theme__level',
         'theme',
         'name'
-    #     todo check
+        #     todo check
     )
+    readonly_fields = ('picture_preview',)
+#     change order todo + add field sets

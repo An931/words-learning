@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-
+from django.utils.html import mark_safe
+# from audiofield.fields import AudioField
 
 class Word(models.Model):
 
@@ -27,12 +28,26 @@ class Word(models.Model):
         max_length=255,
         blank=True,
     )
-    sound = models.URLField(
+    sound = models.FileField(
         _('Sound'),
+        # todo check extension
+        upload_to='static/sounds',
+        null=True,
         blank=True,
     )
-    picture = models.URLField(
+    # sound = AudioField(
+    #     _('Sound'),
+    #     # todo check extension
+    #     upload_to='static/sounds',
+    #     null=True,
+    #     blank=True,
+    # )
+    # ext_whitelist=(".mp3", ".wav", ".ogg"),
+    #                         help_text=("Allowed type - .mp3, .wav, .ogg")
+    picture = models.ImageField(
         _('Picture'),
+        upload_to='static/images',
+        null=True,
         blank=True,
     )
     theme = models.ForeignKey(
@@ -40,6 +55,12 @@ class Word(models.Model):
         on_delete=models.CASCADE,
         related_name='theme',
     )
+
+    # @property
+    def picture_preview(self):
+        return mark_safe(f'<img src="{self.picture.url}" height="200"/>')
+
+    # picture_preview.short_description = _('Audio file player')  #todo for all and change
 
     def __str__(self):
         return f'{self.name} - {self.translation}'

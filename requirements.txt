@@ -1,1 +1,3 @@
 #todo add pip list
+
+pip install django-audiofield

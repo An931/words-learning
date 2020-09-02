@@ -35,3 +35,4 @@ class ThemeAdmin(admin.ModelAdmin):
         'category',
         'level',
     )
+    readonly_fields = ('photo_preview',)

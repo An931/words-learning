@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.html import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -24,10 +25,16 @@ class Theme(models.Model):
         null=True,
         related_name='level',
     )
-    photo = models.URLField(
+    photo = models.ImageField(
         _('Photo'),
+        upload_to='static/images',
+        null=True,
         blank=True,
     )
+
+    @property
+    def photo_preview(self):
+        return mark_safe(f'<img src="{self.photo.url}" height="200"/>')
 
     def __str__(self):
         return self.name
