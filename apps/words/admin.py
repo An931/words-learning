@@ -28,6 +28,7 @@ class WordAdmin(admin.ModelAdmin):
         'name',
         'translation',
         'example',
+
     )
     ordering = (
         'theme__level',
@@ -35,5 +36,6 @@ class WordAdmin(admin.ModelAdmin):
         'name'
         #     todo check
     )
-    readonly_fields = ('picture_preview','sound_preview')
+    readonly_fields = ('picture_preview',
+                       'sound_preview')
 #     change order todo + add field sets
