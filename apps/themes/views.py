@@ -3,7 +3,6 @@ from rest_framework import viewsets
 from .models import Theme
 from .serializers import ThemeSerializer
 
-# class ThemeViewSet(viewsets.ReadOnlyModelViewSet):
 
 class ThemeViewSet(viewsets.ModelViewSet):
     """API view set for Theme model"""

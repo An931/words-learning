@@ -23,3 +23,4 @@ class LevelAdmin(admin.ModelAdmin):
     # def has_delete_permission(self, request, obj=None):
     #     return False
 #     todo update too
+# del action mb
