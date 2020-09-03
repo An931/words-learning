@@ -11,10 +11,6 @@ LEVELS = (
 )
 
 
-def run():
-    add_levels()
-
-
 def add_levels():
     """Add necessary levels to db"""
     for level in LEVELS:
@@ -22,5 +18,5 @@ def add_levels():
         level_obj.save()
 
 
-
-
+def run():
+    add_levels()

@@ -15,6 +15,11 @@ docker-compose up -d postgres
 python3 manage.py migrate
 ```
 
+## Run server
+```bash
+python3 manage.py runserver 127.0.0.1:8000
+```
+
 ## Create superuser
 ```bash
 python3 manage.py createsuperuser
@@ -31,8 +36,10 @@ python3 manage.py runscript fill_data
 ```
 
 
-shell
-exec(open('scripts/add_levels.py').read())
+##[Admin page](http://127.0.0.1:8000/admin)
 
-pip3 freeze > requirements.txt - todo
-todo flake8, isort
+##API
+[levels](http://127.0.0.1:8000/api/levels)
+[categories](http://127.0.0.1:8000/api/categories)
+[themes](http://127.0.0.1:8000/api/themes)
+[words](http://127.0.0.1:8000/api/words)

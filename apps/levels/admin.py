@@ -22,10 +22,11 @@ class LevelAdmin(admin.ModelAdmin):
         'code',
     )
 
-    # def has_add_permission(self, request):
-    #     return False
-    #
-    # def has_delete_permission(self, request, obj=None):
-    #     return False
-#     todo update too
-# del action mb
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False

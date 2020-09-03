@@ -32,3 +32,5 @@ class CategoryAdmin(admin.ModelAdmin):
     def icon_preview(self, obj):
         """Preview for icon field"""
         return mark_safe(f'<img src="{obj.icon.url}" height="200"/>')
+
+    actions = None
