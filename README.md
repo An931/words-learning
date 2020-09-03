@@ -35,7 +35,6 @@ python3 manage.py runscript add_levels
 python3 manage.py runscript fill_data
 ```
 
-
 ##[Admin page](http://127.0.0.1:8000/admin)
 
 ##API
