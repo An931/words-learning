@@ -4,11 +4,12 @@ from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from .serializers import CategorySerializer
 from .models import Category
+from .serializers import CategorySerializer
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
+    """API view set for Category model"""
 
     queryset = Category.objects.all()
     serializer_class = CategorySerializer

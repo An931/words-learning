@@ -1,11 +1,12 @@
 from rest_framework import serializers
 
 from .models import Theme
+
 # from apps.tags.api.serializers import TagSerializer todo
 
 
 class ThemeSerializer(serializers.ModelSerializer):
-    # todo query params ??
+    """Serializer for Theme model including words list"""
 
     class Meta:
         model = Theme

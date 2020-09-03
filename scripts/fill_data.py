@@ -3,23 +3,22 @@ from apps.levels.models import Level
 from apps.themes.models import Theme
 from apps.words.models import Word
 
-
 data = {
     'People and things': {
         'Food': {
             'level': 'A1',
             'words': [
-                ('apple', 'яблуко'),
-                ('bread', 'хліб'),
-                ('pie', 'пиріг'),
+                ('apple', 'яблоко'),
+                ('bread', 'хлеб'),
+                ('pie', 'пирог'),
             ]
         },
         'Human body': {
             'level': 'A2',
             'words': [
-                ('nose', 'ніс'),
-                ('eye', 'око'),
-                ('ear', 'вухo'),
+                ('nose', 'нос'),
+                ('eye', 'глаз'),
+                ('ear', 'ухо'),
             ]
         }
     },
@@ -27,11 +26,11 @@ data = {
         'Months': {
             'level': 'B1',
             'words': [
-                ('January', 'Січень'),
-                ('February', 'Лютий'),
-                ('March', 'Березень'),
-                ('April', 'Квітень'),
-                ('May', 'Травень'),
+                ('January', 'Январь'),
+                ('February', 'Февраль'),
+                ('March', 'Март'),
+                ('April', 'Апрель'),
+                ('May', 'Май'),
             ]
         }
     }
@@ -39,12 +38,13 @@ data = {
 
 
 def add_data():
-    # todo write or remove
+    """Fill db with some data objects"""
     for category, themes in data:
         category_obj = Category(name=category)
         category_obj.save()
         for theme, attributes in themes:
             theme_obj = Theme(name=theme, )
+            # todo write
 
 
 if __name__ == '__main__':

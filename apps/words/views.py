@@ -1,18 +1,17 @@
-from rest_framework import viewsets
-from .models import Word
-from .serializers import WordSerializer
-from rest_framework import generics
-# from rest_framework_api_key.permissions import HasAPIKey
-# from rest_framework.permissions import IsAuthenticated
+from rest_framework import generics, viewsets
 
 from permissions.api_key_permissions import APIKeyPermission
 
-# class WordViewSet(viewsets.ReadOnlyModelViewSet):
-#     # todo not readonly, check others
-#     queryset = Word.objects.all()
-#     serializer_class = WordSerializer
+from .models import Word
+from .serializers import WordSerializer
+
+# from rest_framework_api_key.permissions import HasAPIKey
+# from rest_framework.permissions import IsAuthenticated
+
 
 class WordViewSet(viewsets.ModelViewSet):
+    """API view set for Word model"""
+
     queryset = Word.objects.all()
     serializer_class = WordSerializer
     # todo for all

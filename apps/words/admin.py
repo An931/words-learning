@@ -5,6 +5,8 @@ from .models import Word
 
 @admin.register(Word)
 class WordAdmin(admin.ModelAdmin):
+    """Admin for Word model"""
+
     list_display = (
         'id',
         'name',

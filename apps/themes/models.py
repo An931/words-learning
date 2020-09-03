@@ -4,6 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Theme(models.Model):
+    """Theme model"""
 
     name = models.CharField(
         _('Name'),
@@ -34,6 +35,7 @@ class Theme(models.Model):
 
     @property
     def photo_preview(self):
+        # todo move to admin model
         return mark_safe(f'<img src="{self.photo.url}" height="200"/>')
 
     def __str__(self):
