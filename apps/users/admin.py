@@ -5,10 +5,9 @@ from .models import User
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    # todo mb not add in admin (how to avoid adding level)
+    """Admin for User model"""
 
     list_display = (
-        # todo where display
         'id',
         'email',
         'name',

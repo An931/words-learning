@@ -1,8 +1,9 @@
 from rest_framework import serializers
 
-from .models import Theme
 from apps.words.models import Word
 from apps.words.serializers import ShortWordSerializer
+
+from .models import Theme
 
 
 class ThemeSerializer(serializers.ModelSerializer):

@@ -1,15 +1,7 @@
 from django.contrib.auth.models import BaseUserManager
-from django.db.models import Q, QuerySet
-from django.utils.translation import ugettext_lazy as _
-
-__all__ = (
-    'UserManager',
-)
 
 
 class UserManager(BaseUserManager):
-
-
     def create_superuser(self, email: str, password: str):
         user = self.create_user(
             email=email, password=password,

@@ -1,6 +1,6 @@
-# from django.apps import AppConfig
-#
-#
-# class CategoriesConfig(AppConfig):
-#     name = 'apps.categories'
-# todo what for
+from django.apps import AppConfig
+
+
+class CategoriesConfig(AppConfig):
+    name = 'apps.categories'
+    verbose_name = "Categories"

@@ -13,4 +13,3 @@ class CategorySerializer(serializers.ModelSerializer):
             'name',
             'icon',
         )
-#         todo add my fields
