@@ -39,10 +39,10 @@ data = {
 
 def add_data():
     """Fill db with some data objects"""
-    for category, themes in data:
+    for category, themes in data.items():
         category_obj = Category(name=category)
         category_obj.save()
-        for theme, attributes in themes:
+        for theme, attributes in themes.items():
             level_obj = Level.objects.filter(code=attributes['level']).first()
             theme_obj = Theme(name=theme, level=level_obj, category=category_obj)
             theme_obj.save()
@@ -50,8 +50,6 @@ def add_data():
                 word_obj = Word(name=word[0], translation=word[1], theme=theme_obj)
                 word_obj.save()
 
-            # todo check
 
-
-if __name__ == '__main__':
+def run():
     add_data()

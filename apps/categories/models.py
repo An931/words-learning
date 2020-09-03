@@ -18,7 +18,6 @@ class Category(models.Model):
     icon = models.ImageField(
         _('Icon'),
         upload_to='static/images',
-        # todo what if double name
         null=True,
         blank=True,
     )

@@ -22,12 +22,12 @@ python3 manage.py createsuperuser
 
 ## Add necessary levels
 ```bash
-
+python3 manage.py runscript add_levels
 ```
 
 ## Add some other data example
 ```bash
-
+python3 manage.py runscript fill_data
 ```
 
 

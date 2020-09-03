@@ -45,6 +45,6 @@ class ThemeAdmin(admin.ModelAdmin):
         'photo_preview',
     )
 
-    def photo_preview(self):
+    def photo_preview(self, obj):
         """Preview for photo field"""
-        return mark_safe(f'<img src="{self.photo.url}" height="200"/>')
+        return mark_safe(f'<img src="{obj.photo.url}" height="200"/>')

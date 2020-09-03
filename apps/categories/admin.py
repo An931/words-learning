@@ -13,7 +13,6 @@ class CategoryAdmin(admin.ModelAdmin):
         'translation',
         ('icon_preview', 'icon')
     )
-
     list_display = (
         'id',
         'name',

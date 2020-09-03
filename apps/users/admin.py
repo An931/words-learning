@@ -1,4 +1,6 @@
+
 from django.contrib import admin
+from django.contrib.auth.models import Group
 
 from .models import User
 
@@ -6,6 +8,12 @@ from .models import User
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
     """Admin for User model"""
+
+    fields = (
+        'email',
+        'name',
+        'is_superuser',
+    )
 
     list_display = (
         'id',
@@ -23,57 +31,6 @@ class UserAdmin(admin.ModelAdmin):
     )
     list_display_links = ('id', 'email',)
 
-    # add_fieldsets = (
-    #     (None, {
-    #         'classes': ('wide',),
-    #         'fields': ('email', 'password1', 'password2',),
-    #     }),
-    #     (_('Personal info'), {
-    #         'fields': (
-    #             'first_name',
-    #             'last_name',
-    #             'role',
-    #             'phone_number',
-    #         )
-    #     })
-    #
-    # )
-    # fieldsets = (
-    #     (None, {'fields': ('email', 'password',)}),
-    #     (_('Personal info'), {
-    #         'fields': (
-    #             'first_name',
-    #             'last_name',
-    #             'role',
-    #             'phone_number',
-    #         )
-    #     }),
-    #     (_('Permissions'), {
-    #         'classes': (
-    #             'collapse',
-    #         ),
-    #         'fields': (
-    #             'is_active',
-    #             'is_staff',
-    #             'is_superuser',
-    #             'groups',
-    #             'user_permissions',
-    #         )
-    #     }),
-    #     (_('Important dates'), {
-    #         'fields': ('last_login', 'date_joined',)
-    #     }),
-    # )
-    # readonly_fields = DjangoUserAdmin.readonly_fields + (
-    #     'last_login',
-    #     'date_joined',
-    # )
-    # list_filter = (
-    #     'role',
-    #     'is_active',
-    #     'is_staff',
-    #     'is_superuser',
-    # )
-    # ordering = ('email',)
-    # actions = [deactivate]
-    # change_actions = ['deactivate']
+
+# remove Group model from admin
+admin.site.unregister(Group)
