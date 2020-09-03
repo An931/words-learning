@@ -35,9 +35,9 @@ python3 manage.py runscript add_levels
 python3 manage.py runscript fill_data
 ```
 
-##[Admin page](http://127.0.0.1:8000/admin)
+## [Admin page](http://127.0.0.1:8000/admin)
 
-##API
+## API
 [levels](http://127.0.0.1:8000/api/levels)
 [categories](http://127.0.0.1:8000/api/categories)
 [themes](http://127.0.0.1:8000/api/themes)
