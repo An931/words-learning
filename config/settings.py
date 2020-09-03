@@ -39,6 +39,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -73,9 +74,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # }
 
 import dj_database_url
+
 DATABASES = {'default': dj_database_url.parse(
     'postgres://kaksdsrtdavvei:24a85a98cda5b7363ccb3d191094c20113b9c26433e18dd0b81d5d87170772ee@ec2-54-211-169-227.compute-1.amazonaws.com:5432/dce69b1o7oo26k')}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -112,7 +113,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-# STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
@@ -120,4 +121,4 @@ STATICFILES_DIRS = (
 
 API_SECRET = 'simple_secret'
 
-# GDAL_LIBRARY_PATH = '/home/sue/local/lib/python3.8/site-packages/django/contrib/gis'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
