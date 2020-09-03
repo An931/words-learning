@@ -6,7 +6,7 @@ from .models import Word
 from .serializers import WordSerializer
 
 # from rest_framework_api_key.permissions import HasAPIKey
-# from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated
 
 
 class WordViewSet(viewsets.ModelViewSet):
@@ -14,13 +14,12 @@ class WordViewSet(viewsets.ModelViewSet):
 
     queryset = Word.objects.all()
     serializer_class = WordSerializer
-    # todo for all
-    # todo check in postman
+
     # todo check readonly and not
-    permission_classes = [APIKeyPermission]
+    permission_classes = [APIKeyPermission | IsAuthenticated]
 
     def get_queryset(self):
-        # !!! todo query par need to be in themes!!!
+        # !!! todo add theme  param
         """
         Optionally restricts the returned purchases to a given user,
         by filtering against a `username` query parameter in the URL.

@@ -15,7 +15,29 @@ class WordSerializer(serializers.ModelSerializer):
             'id',
             'name',
             'translation',
-            'transcription',
             'example',
+            'picture',
             'sound',
+            'theme',
         )
+        read_only_fields = (
+            'theme',
+        )
+
+
+class ShortWordSerializer(serializers.ModelSerializer):
+    """Short serializer for Word model.
+     fields:
+      id
+      name
+      translation
+    """
+
+    class Meta:
+        model = Word
+        fields = (
+            'id',
+            'name',
+            'translation',
+        )
+

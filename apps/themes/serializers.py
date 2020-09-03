@@ -1,15 +1,21 @@
 from rest_framework import serializers
 
 from .models import Theme
-
-# from apps.tags.api.serializers import TagSerializer todo
-from apps.words.serializers import WordSerializer
+from apps.words.models import Word
+from apps.words.serializers import ShortWordSerializer
+from apps.levels.serializers import LevelSerializer
 
 
 class ThemeSerializer(serializers.ModelSerializer):
     """Serializer for Theme model including words list"""
 
-    words_serializer = WordSerializer(many=True, read_only=True, source='words')
+    words = serializers.SerializerMethodField('get_words')
+
+    def get_words(self, theme):
+        """Return serialized words set"""
+        queryset = Word.objects.filter(theme=theme)
+        serializer = ShortWordSerializer(many=True, instance=queryset)
+        return serializer.data
 
     class Meta:
         model = Theme
@@ -19,22 +25,5 @@ class ThemeSerializer(serializers.ModelSerializer):
             'level',
             'name',
             'photo',
-            # 'words', todo
-            'words_serializer',
+            'words',
         )
-        # depth=1
-#         https://www.django-rest-framework.org/api-guide/serializers/#modelserializer
-        readonly_fields=(
-            'words_serializer',
-        )
-
-
-# todo another serializer with id
-# fields=(
-#     'id',
-#     'category',
-#     'level'
-#     'name',
-#     'photo',
-#     'words' -- how?
-# )

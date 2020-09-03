@@ -36,8 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    # "rest_framework_api_key",
-    # 'audiofield',  # todo cant do this
 
     'apps.users',
     'apps.levels',
@@ -54,7 +52,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'audiofield.middleware.threadlocals.ThreadLocals',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -76,9 +73,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
-
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -130,7 +124,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
-# STATIC_ROOT = ??
 
 # API_KEY_CUSTOM_HEADER = "HTTP_SECRET"
 API_SECRET = 'simple_secret'
