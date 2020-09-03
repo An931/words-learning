@@ -9,7 +9,8 @@ class ThemeAdmin(admin.ModelAdmin):
     """Admin for Theme model"""
 
     fields = (
-        ('name', 'translation'),
+        'name',
+        'translation',
         'category',
         'level',
         ('photo_preview', 'photo')

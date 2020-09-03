@@ -10,11 +10,11 @@ class WordAdmin(admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-            'fields': (('name', 'translation'), 'theme')
+            'fields': ('name', 'translation', 'theme')
         }),
         ('Additional', {
             'classes': ('extrapretty',),
-            'fields': (('transcription', 'plural', 'example'),)
+            'fields': ('transcription', 'plural', 'example',)
         }),
         ('Media', {
             'classes': ('collapse',),

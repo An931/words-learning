@@ -2,14 +2,6 @@ version: '3'
 
 services:
 
-#  postgres:
-#    image: postgres
-#    ports:
-#      - "5432:5432"
-#    environment:
-#      - POSTGRES_DB=dev
-#      - POSTGRES_USER=postgres
-#      - POSTGRES_PASSWORD=postgres
   db:
     image: postgres
     environment:
@@ -26,12 +18,3 @@ services:
       - "8000:8000"
     depends_on:
       - db
-#      - migration
-#
-#  migration:
-#    build: .
-#    command: python manage.py migrate
-#    volumes:
-#      - .:/code
-#    depends_on:
-#      - postgres
