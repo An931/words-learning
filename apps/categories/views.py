@@ -15,7 +15,3 @@ class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     permission_classes = [APIKeyPermission | IsAuthenticated]
-
-    # todo check posts and gets
-    # todo validate date
-    # todo del post and add in levels

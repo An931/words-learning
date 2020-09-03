@@ -5,6 +5,7 @@ from .models import Theme
 from .serializers import ThemeSerializer
 from permissions.api_key_permissions import APIKeyPermission
 
+
 class ThemeViewSet(viewsets.ModelViewSet):
     """API view set for Theme model"""
 
@@ -13,6 +14,7 @@ class ThemeViewSet(viewsets.ModelViewSet):
     permission_classes = [APIKeyPermission | IsAuthenticated]
 
     def get_queryset(self):
+        """Filter by query params category and level"""
         queryset = Theme.objects.all()
 
         category_id = self.request.query_params.get('category', None)
@@ -20,7 +22,6 @@ class ThemeViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(category__id=category_id)
 
         level_id = self.request.query_params.get('level', None)
-        # todo what is none
         if level_id:
             queryset = queryset.filter(level__id=level_id)
         return queryset
