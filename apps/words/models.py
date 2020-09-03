@@ -1,6 +1,4 @@
 from django.db import models
-# from audiofield.fields import AudioField
-from django.utils.html import format_html, mark_safe
 from django.utils.translation import ugettext_lazy as _
 from django.core.exceptions import ValidationError
 
@@ -33,7 +31,6 @@ class Word(models.Model):
     )
     sound = models.FileField(
         _('Sound'),
-        # todo check extension
         upload_to='static/sounds',
         null=True,
         blank=True,
@@ -50,27 +47,8 @@ class Word(models.Model):
         related_name='theme',
     )
 
-    # @property
-    def picture_preview(self):
-        return format_html(
-            f'<a href="{self.picture.url}"> <img src="{self.picture.url}" height="200"/></a>')
-
-    # mb add link
-
-    # picture_preview.short_description = _('Audio file player')  #todo for all and change
-
-    # @property
-    def sound_preview(self):
-        return format_html(f'<audio controls src="{self.sound.url}"></audio>')
-        # return format_html(f'<img src="{self.sound.url}"/>')
-        # return mark_safe(f'<audio src="{self.sound.url}" autoplay></audio>')
-
-    # todo in admin only, not in model
-
     def clean(self):
         """Check if sound field has right extension"""
-        #     todo is it need to check img?
-        # maybe check name symbols for all
         if self.sound and not self.sound.name.endswith('.mp3'):
             raise ValidationError(
                 {'sound': _('File should have mp3 extension')})

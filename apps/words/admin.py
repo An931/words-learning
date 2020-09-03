@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import format_html
 
 from .models import Word
 
@@ -51,3 +52,12 @@ class WordAdmin(admin.ModelAdmin):
         'picture_preview',
         'sound_preview'
     )
+
+    def picture_preview(self, obj):
+        """Preview for picture field"""
+        return format_html(
+            f'<a href="{obj.picture.url}"> <img src="{obj.picture.url}" height="200"/></a>')
+
+    def sound_preview(self, obj):
+        """Preview for sound field"""
+        return format_html(f'<audio controls src="{obj.sound.url}"></audio>')

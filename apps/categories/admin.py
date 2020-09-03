@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import mark_safe
 
 from .models import Category
 
@@ -28,5 +29,7 @@ class CategoryAdmin(admin.ModelAdmin):
     readonly_fields = (
         'icon_preview',
     )
-#     todo add themes mb
-# todo add img preview to admin only
+
+    def icon_preview(self, obj):
+        """Preview for icon field"""
+        return mark_safe(f'<img src="{obj.icon.url}" height="200"/>')

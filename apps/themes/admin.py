@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import mark_safe
 
 from .models import Theme
 
@@ -40,4 +41,10 @@ class ThemeAdmin(admin.ModelAdmin):
         'category',
         'level',
     )
-    readonly_fields = ('photo_preview',)
+    readonly_fields = (
+        'photo_preview',
+    )
+
+    def photo_preview(self):
+        """Preview for photo field"""
+        return mark_safe(f'<img src="{self.photo.url}" height="200"/>')

@@ -24,10 +24,6 @@ class Category(models.Model):
         blank=True,
     )
 
-    @property
-    def icon_preview(self):
-        return mark_safe(f'<img src="{self.icon.url}" height="200"/>')
-
     def __str__(self):
         return self.name
 

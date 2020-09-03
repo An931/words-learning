@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.html import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -32,11 +31,6 @@ class Theme(models.Model):
         null=True,
         blank=True,
     )
-
-    @property
-    def photo_preview(self):
-        # todo move to admin model
-        return mark_safe(f'<img src="{self.photo.url}" height="200"/>')
 
     def __str__(self):
         return self.name
