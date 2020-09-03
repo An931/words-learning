@@ -14,7 +14,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -64,26 +63,19 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # DATABASES = {
 #     'default': {
-#         # 'ENGINE': 'django.contrib.gis.db.backends.postgis',
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'dev',
+#         'NAME': 'postgres',
 #         'USER': 'postgres',
 #         'PASSWORD': 'postgres',
-#         'HOST': '0.0.0.0',
-#         'PORT': '5432',
+#         'HOST': 'db',
+#         'PORT': 5432,
 #     }
 # }
+import dj_database_url
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432,
-    }
-}
+DATABASES = {'default': dj_database_url.parse(
+    'postgres://kaksdsrtdavvei:24a85a98cda5b7363ccb3d191094c20113b9c26433e18dd0b81d5d87170772ee@ec2-54-211-169-227.compute-1.amazonaws.com:5432/dce69b1o7oo26k')}
+# postgres://kaksdsrtdavvei:24a85a98cda5b7363ccb3d191094c20113b9c26433e18dd0b81d5d87170772ee@ec2-54-211-169-227.compute-1.amazonaws.com:5432/dce69b1o7oo26k
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
