@@ -7,6 +7,12 @@ from .models import Category
 class CategoryAdmin(admin.ModelAdmin):
     """Admin for Category model"""
 
+    fields = (
+        'name',
+        'translation',
+        ('icon_preview', 'icon')
+    )
+
     list_display = (
         'id',
         'name',
@@ -22,3 +28,5 @@ class CategoryAdmin(admin.ModelAdmin):
     readonly_fields = (
         'icon_preview',
     )
+#     todo add themes mb
+# todo add img preview to admin only

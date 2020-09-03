@@ -9,3 +9,4 @@ class LevelViewSet(viewsets.ReadOnlyModelViewSet):
 
     queryset = Level.objects.all()
     serializer_class = LevelSerializer
+    permission_classes = '' #todo

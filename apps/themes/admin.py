@@ -7,9 +7,12 @@ from .models import Theme
 class ThemeAdmin(admin.ModelAdmin):
     """Admin for Theme model"""
 
-    # fields = ('name',)
-    # todo (fieldset mb and other field order)
-
+    fields = (
+        ('name', 'translation'),
+        'category',
+        'level',
+        ('photo_preview', 'photo')
+    )
 
     list_display = (
         'id',
@@ -30,6 +33,7 @@ class ThemeAdmin(admin.ModelAdmin):
         'translation'
     )
     ordering = (
+        'level__code',
         'name',
     )
     list_filter = (

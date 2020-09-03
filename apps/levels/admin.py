@@ -9,8 +9,13 @@ class LevelAdmin(admin.ModelAdmin):
 
     list_display = (
         'id',
-        'name',
         'code',
+        'name',
+    )
+    list_display_links = (
+        'id',
+        'code',
+        'name',
     )
     search_fields = (
         'name',

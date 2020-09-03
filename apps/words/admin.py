@@ -7,6 +7,20 @@ from .models import Word
 class WordAdmin(admin.ModelAdmin):
     """Admin for Word model"""
 
+    fieldsets = (
+        (None, {
+            'fields': (('name', 'translation'), 'theme')
+        }),
+        ('Additional', {
+            'classes': ('extrapretty',),
+            'fields': (('transcription', 'plural', 'example'),)
+        }),
+        ('Media', {
+            'classes': ('collapse',),
+            'fields': (('picture_preview', 'picture'),
+                       ('sound_preview', 'sound'))
+        }),
+    )
     list_display = (
         'id',
         'name',
@@ -18,10 +32,8 @@ class WordAdmin(admin.ModelAdmin):
         'name',
         'translation',
     )
-    # add fieldsets
     list_filter = (
-        'theme',
-        'theme__level'
+        'theme__level',
     )
     autocomplete_fields = (
         'theme',
@@ -30,15 +42,12 @@ class WordAdmin(admin.ModelAdmin):
         'name',
         'translation',
         'example',
-
     )
     ordering = (
         'theme__level',
-        'theme',
         'name'
-        #     todo check
     )
-    readonly_fields = ('picture_preview',
-                       'sound_preview')
-#     change order todo + add field sets
-# https://docs.djangoproject.com/en/3.1/ref/contrib/admin/
+    readonly_fields = (
+        'picture_preview',
+        'sound_preview'
+    )
