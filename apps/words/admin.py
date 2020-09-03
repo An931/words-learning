@@ -5,6 +5,8 @@ from .models import Word
 
 @admin.register(Word)
 class WordAdmin(admin.ModelAdmin):
+    """Admin for Word model"""
+
     list_display = (
         'id',
         'name',
@@ -39,3 +41,4 @@ class WordAdmin(admin.ModelAdmin):
     readonly_fields = ('picture_preview',
                        'sound_preview')
 #     change order todo + add field sets
+# https://docs.djangoproject.com/en/3.1/ref/contrib/admin/

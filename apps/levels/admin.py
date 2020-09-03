@@ -5,6 +5,7 @@ from .models import Level
 
 @admin.register(Level)
 class LevelAdmin(admin.ModelAdmin):
+    """Admin for Level model"""
 
     list_display = (
         'id',
@@ -14,12 +15,7 @@ class LevelAdmin(admin.ModelAdmin):
     search_fields = (
         'name',
         'code',
-    #     maybe del in autocomplete (but do with filter)
     )
-    # list_filter = (
-    #     # todo it will be in others
-    #     'code',
-    # )
 
     # def has_add_permission(self, request):
     #     return False
@@ -27,3 +23,4 @@ class LevelAdmin(admin.ModelAdmin):
     # def has_delete_permission(self, request, obj=None):
     #     return False
 #     todo update too
+# del action mb

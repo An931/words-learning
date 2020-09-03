@@ -1,13 +1,12 @@
 from rest_framework import viewsets
+
 from .models import Theme
 from .serializers import ThemeSerializer
 
 
-# class ThemeViewSet(viewsets.ReadOnlyModelViewSet):
-
 class ThemeViewSet(viewsets.ModelViewSet):
-    # todo what if not readonly
-    """"""
+    """API view set for Theme model"""
+
     queryset = Theme.objects.all()
     serializer_class = ThemeSerializer
 

@@ -3,6 +3,8 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Level(models.Model):
+    """Level model"""
+
     name = models.CharField(
         _('Name'),
         max_length=20,

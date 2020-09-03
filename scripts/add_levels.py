@@ -12,10 +12,10 @@ LEVELS = (
 
 
 def add_levels():
+    """Add necessary levels to db"""
     for level in LEVELS:
         level_obj = Level(name=level[1], code=level[0])
         level_obj.save()
-        print(f'Level created: {level_obj.code} - {level_obj.name}')
 
 
 if __name__ == '__main__':

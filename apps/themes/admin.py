@@ -5,9 +5,10 @@ from .models import Theme
 
 @admin.register(Theme)
 class ThemeAdmin(admin.ModelAdmin):
+    """Admin for Theme model"""
 
     # fields = ('name',)
-    # todo
+    # todo (fieldset mb and other field order)
 
 
     list_display = (

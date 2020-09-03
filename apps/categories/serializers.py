@@ -1,10 +1,10 @@
 from rest_framework import serializers
 
 from apps.categories.models import Category
-# from apps.tags.api.serializers import TagSerializer
 
 
 class CategorySerializer(serializers.ModelSerializer):
+    """Simple serializer for Category model"""
 
     class Meta:
         model = Category
@@ -13,4 +13,4 @@ class CategorySerializer(serializers.ModelSerializer):
             'name',
             'icon',
         )
-#         todo what else
+#         todo add my fields
