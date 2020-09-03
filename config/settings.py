@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    "rest_framework_api_key",
+    # "rest_framework_api_key",
     # 'audiofield',  # todo cant do this
 
     'apps.users',
@@ -132,13 +132,15 @@ STATICFILES_DIRS = (
 )
 # STATIC_ROOT = ??
 
-
+# API_KEY_CUSTOM_HEADER = "HTTP_SECRET"
 API_SECRET = 'simple_secret'
-REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework_api_key.permissions.HasAPIKey",
-    ]
-}
+
+# REST_FRAMEWORK = {
+#     "DEFAULT_PERMISSION_CLASSES": [
+#         "rest_framework_api_key.permissions.HasAPIKey",
+#     ]
+# }
+# set it global
 
 # # Set Following variable
 # MEDIA_ROOT = ''
