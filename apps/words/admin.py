@@ -35,5 +35,5 @@ class WordAdmin(admin.ModelAdmin):
         'name'
         #     todo check
     )
-    readonly_fields = ('picture_preview',)
+    readonly_fields = ('picture_preview','sound_preview')
 #     change order todo + add field sets

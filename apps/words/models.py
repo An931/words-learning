@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.html import mark_safe
 # from audiofield.fields import AudioField
+from django.utils.html import format_html
 
 class Word(models.Model):
 
@@ -58,9 +59,19 @@ class Word(models.Model):
 
     # @property
     def picture_preview(self):
-        return mark_safe(f'<img src="{self.picture.url}" height="200"/>')
+        return format_html(f'<a href="{self.picture.url}"> <img src="{self.picture.url}" height="200"/></a>')
+    # mb add link
 
     # picture_preview.short_description = _('Audio file player')  #todo for all and change
+
+
+    # @property
+    def sound_preview(self):
+        return format_html(f'<audio controls src="{self.sound.url}"></audio>')
+        # return format_html(f'<img src="{self.sound.url}"/>')
+        # return mark_safe(f'<audio src="{self.sound.url}" autoplay></audio>')
+
+    # todo in admin only, not in model
 
     def __str__(self):
         return f'{self.name} - {self.translation}'

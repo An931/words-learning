@@ -2,7 +2,8 @@ from rest_framework import viewsets
 from .models import Word
 from .serializers import WordSerializer
 from rest_framework import generics
-
+from rest_framework_api_key.permissions import HasAPIKey
+from rest_framework.permissions import IsAuthenticated
 
 # class WordViewSet(viewsets.ReadOnlyModelViewSet):
 #     # todo not readonly, check others
@@ -12,6 +13,10 @@ from rest_framework import generics
 class WordViewSet(viewsets.ModelViewSet):
     queryset = Word.objects.all()
     serializer_class = WordSerializer
+    # todo for all
+    # todo check in postman
+    # todo check readonly and not
+    permission_classes = [HasAPIKey | IsAuthenticated]
 
     def get_queryset(self):
         # !!! todo query par need to be in themes!!!

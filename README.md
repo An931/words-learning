@@ -9,4 +9,5 @@ exec(open('scripts/add_levels.py').read())
 
 pip install django-audiofield
 
-pip3 freeze > requirements.txt
+pip3 freeze > requirements.txt - todo
+todo flake8, isort
