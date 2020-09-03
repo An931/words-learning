@@ -10,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'pm5m9=^q)b__%m!(rvd&-_&2udqjtc^n-ba@0g1a$ujl=ch0!i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -62,14 +62,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+# DATABASES = {
+#     'default': {
+#         # 'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'dev',
+#         'USER': 'postgres',
+#         'PASSWORD': 'postgres',
+#         'HOST': '0.0.0.0',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'dev',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': '0.0.0.0',
-        'PORT': '5432',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 
@@ -115,3 +127,4 @@ STATICFILES_DIRS = (
 
 API_SECRET = 'simple_secret'
 
+# GDAL_LIBRARY_PATH = '/home/sue/local/lib/python3.8/site-packages/django/contrib/gis'
