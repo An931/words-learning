@@ -1,5 +1,14 @@
 # words-learning
 
+## [Admin page](https://evening-gorge-85945.herokuapp.com/admin)
+
+## API
+[levels](https://evening-gorge-85945.herokuapp.com/api/levels)
+[categories](https://evening-gorge-85945.herokuapp.com/api/categories)
+[themes](https://evening-gorge-85945.herokuapp.com/api/themes)
+[words](https://evening-gorge-85945.herokuapp.com/api/words)
+
+
 ## Install packages
 ```bash
 pip install -r requirements.txt
@@ -34,11 +43,3 @@ python3 manage.py runscript add_levels
 ```bash
 python3 manage.py runscript fill_data
 ```
-
-## [Admin page](http://127.0.0.1:8000/admin)
-
-## API
-[levels](http://127.0.0.1:8000/api/levels)
-[categories](http://127.0.0.1:8000/api/categories)
-[themes](http://127.0.0.1:8000/api/themes)
-[words](http://127.0.0.1:8000/api/words)
